@@ -1,0 +1,256 @@
+body {
+	margin: 0;
+}
+
+.site-title {
+	background-color: #d73f09;
+	margin: 0;
+	padding: 15px;
+	color: white;
+	font-weight: bold;
+	font-size: 35px;
+}
+
+.nav-bar {
+   	padding: 4px;
+	background-color: black;
+}
+
+.post-container {
+	padding: 25px 20px 25px 20px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.post {
+   	width: 260px;
+	background-color: #d73f09;
+	color: #ffffff;
+	padding: 5px 5px 10px 5px;
+	margin: 5px;
+	border: 5px solid black;	
+}
+
+.post-header {
+	justify-content: space-between;
+   	margin: 0px 0px 5px 0px;
+	display: flex;
+}
+
+.post-item {
+	padding: 0px 5px 0px 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	max-width: 195px;
+}
+
+.remove-post-button {
+	background-color: #d73f09;
+	color: #ffffff;
+}
+
+.remove-post-button:focus {
+	outline: none;
+}
+
+.img-container {
+	display: flex;
+	justify-content: center;
+
+}
+
+.img-item {
+   	height: 250px;
+	width: 250px;
+}
+
+.img-item:hover {
+	cursor: pointer;
+}
+
+.post-back {
+   	text-align: center;
+   	display: none;
+}
+
+.post-back-header {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.post-text {
+	margin-bottom: 15px;
+}
+
+.search {
+	position: relative;
+	left: 1318px;
+}
+
+#search-button:hover {
+	color: #d73f09;
+}
+
+#poster-button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 50%;
+	background-color: black;
+	height: 60px;
+	width: 60px;
+	color: #ffffff;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.25);
+	font-size: 25px;
+}
+
+#poster-button:hover {
+	background-color: #d73f09;
+	height: 70px;
+	font-size: 30px;
+	width: 70px;
+}
+
+#poster-button:focus {
+	outline: none;
+}
+
+.hidden-poster {	
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	justify-content: center;
+	display: none;
+}
+
+.poster-box {
+	position: fixed;
+	top: 200px;
+	padding: 5px 5px 5px 10px;
+	background-color: #d73f09;
+	border: 5px solid black;
+	width: 431px;
+	color: #ffffff;
+}
+
+.poster-box-header {
+   	display: flex;
+}
+
+.post-box-caption {
+	width: 95%;
+	padding: 0px 0px 0px 155px;
+}
+
+.close-poster-button {
+	height: 25px;
+}
+
+.poster-input {
+	margin: 0px 0px 10px 0px;
+   	display: flex;
+}
+
+.poster-box-footer {
+	margin: 0px 0px 5px 0px;
+   	display: flex;
+	justify-content: center;
+}
+
+.poster-post-button {
+	margin: 0px 5px 0px 0px;
+}
+
+#poster-item-input {
+	width: 250px;
+}
+
+#poster-comments-input {
+	height: 47px;
+	width: 337px;
+}
+
+#poster-contact-input {
+	width: 328px;
+}
+
+#poster-password-input {
+	width: 189px;
+}
+
+#poster-img-input {
+	width: 200px;
+}
+
+
+.hidden-pass-screen {	
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	display: none;
+	justify-content: center;
+}
+
+.pass-screen-box {
+	position: fixed;
+	top: 200px;
+	padding: 5px 5px 5px 10px;
+	background-color: #d73f09;
+	border: 5px solid black;
+	color: #ffffff;	
+}
+
+.pass-box-header {
+	display: flex;
+}
+
+.pass-box-caption {
+	width: 95%;
+	padding: 0px 0px 0px 58px;
+}
+
+.close-pass-button {
+	height: 25px;	
+}
+
+.pass-box-input {
+	display: flex;
+	margin: 0px 0px 10px 0px;
+}
+
+.pass-box-footer {
+	margin: 0px 0px 5px 0px;
+   	display: flex;
+	justify-content: center;
+}
+
+.pass-remove-button {
+	margin: 0px 5px 0px 0px;
+}
+
+label {
+	margin: 0px 10px 0px 0px;
+}
+
+.post-pass {
+	display: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
