@@ -5,10 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "handlebars ./views/partials/newTwit.handlebars -f public/newTwit.js",
-    "build1": "handlebars ./views/partials/modal.handlebars -f public/modal.js",
-    "prestart": "npm run build && npm run build1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/osu-cs290-sp20/master-assignment-5/issues"
+    "url": "https://github.com/hotchkma/CS_Final_Project/issues"
   },
   "homepage": "https://github.com/osu-cs290-sp20/master-assignment-5#readme",
   "dependencies": {

@@ -12,7 +12,7 @@ body {
 }
 
 .nav-bar {
-   	padding: 4px;
+   	padding: 13px;
 	background-color: black;
 }
 
@@ -29,7 +29,7 @@ body {
 	color: #ffffff;
 	padding: 5px 5px 10px 5px;
 	margin: 5px;
-	border: 5px solid black;	
+	border: 5px solid black;
 }
 
 .post-header {
@@ -84,8 +84,9 @@ body {
 }
 
 .search {
+	float: right;
 	position: relative;
-	left: 1318px;
+	bottom: 9.5px;
 }
 
 #search-button:hover {
@@ -116,7 +117,7 @@ body {
 	outline: none;
 }
 
-.hidden-poster {	
+.hidden-poster {
 	background-color: rgba(0,0,0,0.5);
 	position: fixed;
 	width: 100%;
@@ -187,7 +188,7 @@ body {
 }
 
 
-.hidden-pass-screen {	
+.hidden-pass-screen {
 	background-color: rgba(0,0,0,0.5);
 	position: fixed;
 	width: 100%;
@@ -204,7 +205,7 @@ body {
 	padding: 5px 5px 5px 10px;
 	background-color: #d73f09;
 	border: 5px solid black;
-	color: #ffffff;	
+	color: #ffffff;
 }
 
 .pass-box-header {
@@ -217,7 +218,7 @@ body {
 }
 
 .close-pass-button {
-	height: 25px;	
+	height: 25px;
 }
 
 .pass-box-input {
