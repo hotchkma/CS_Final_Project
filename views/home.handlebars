@@ -1,0 +1,89 @@
+<main class = "post-container">
+  <article class = "post">
+      <div class = "post-front">
+        <div class = "post-header">
+          <div class = "post-item">
+          An A
+        </div>
+        <button type = "button" class = "remove-post-button">Remove</button>
+      </div>
+
+      <div class = "img-container">
+        <img class = "img-item" src = "https://media.gettyimages.com/photos/letter-a-made-by-multi-colored-sparklers-at-night-picture-id914262264?s=612x612" alt = "a photo"/>
+      </div>
+    </div>
+    <div class = "post-back">
+        <div class = "post-back-header">
+        <button type = "button" class = "back-to-front">&times;</button>
+      </div>
+      <div class = post-text>
+          <label for = "post-comments">Comments: </label>
+        <div class = "post-comments">
+          It's an A.
+        </div>
+        <label for = "post-contact-info">Contact Info: </label>
+        <div class = "post-contact-info">
+          1-800-1230-123
+        </div>
+          </div>
+    </div>
+    <div class = post-pass>
+      password
+    </div>
+  </article>
+</main>
+
+<button type = "button" id = "poster-button"><i class="fas fa-images"></i></button>
+
+<div class = "hidden-poster">
+  <div class = "poster-box">
+    <div class = "poster-box-header">
+      <h2 class = "post-box-caption">Create a Post</h2>
+      <button type = "button" class = "close-poster-button">&times;</button>
+    </div>
+    <div class = "poster-box-body">
+        <div class = "poster-input">
+          <label for = "poster-img-input">Select a photo of the item:</label>
+          <input type = "file" id = "poster-img-input">
+      </div>
+      <div class = "poster-input">
+        <label for = "poster-item-input">Item(a short description):</label>
+        <input type = "text" id = "poster-item-input">
+      </div>
+      <div class = "poster-input">
+          <label for = "poster-comments-input">Comments:</label>
+        <textarea id = "poster-comments-input"></textarea>
+      </div>
+      <div class = "poster-input">
+        <label for = "poster-contact-input">Contact Info:</label>
+        <input type = "text" id = "poster-contact-input">
+      </div>
+      <div class = "poster-input">
+        <label for = "poster-password-input">Protect your item with a password:</label>
+        <input type = "text" id = "poster-password-input">
+      </div>
+    </div>
+    <div class = "poster-box-footer">
+      <button type = "button" class = "poster-post-button">Post</button>
+      <button type = "button" class = "cancel-poster-button">Cancel</button>
+    </div>
+  </div>
+</div>
+<div class = "hidden-pass-screen">
+  <div class = "pass-screen-box">
+    <div class = "pass-box-header">
+      <h2 class = "pass-box-caption">Remove a Post</h2>
+      <button type = "button" class = "close-pass-button">&times;</button>
+    </div>
+    <div class = "pass-box-body">
+      <div class = "pass-box-input">
+        <label for = "pass-box-pass">Enter password: </label>
+        <input type = "text" id = "pass-box-pass">
+      </div>
+    </div>
+    <div class = "pass-box-footer">
+      <button type = "button" class = "pass-remove-button">Remove</button>
+      <button type = "button" class = "pass-cancel-button">Cancel</button>
+    </div>
+  </div>
+</div>

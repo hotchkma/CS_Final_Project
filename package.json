@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/hotchkma/CS_Final_Project/issues"
   },
-  "homepage": "https://github.com/osu-cs290-sp20/master-assignment-5#readme",
+  "homepage": "https://github.com/hotchkma/CS_Final_Project/blob/master/Log.md",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^4.0.4",

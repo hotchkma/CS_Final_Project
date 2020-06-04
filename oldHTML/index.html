@@ -5,6 +5,7 @@
 		<script src="https://kit.fontawesome.com/535e0fad29.js" crossorigin="anonymous"></script>
 		<link rel = "stylesheet" href = "/style.css">
 		<script src = "/index.js" charset = "utf-8" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
 	</head>
 
 	<body>
@@ -52,9 +53,9 @@
 				</div>
 			</article>
 		</main>
-		
+
 		<button type = "button" id = "poster-button"><i class="fas fa-images"></i></button>
-	
+
 		<div class = "hidden-poster">
 			<div class = "poster-box">
 				<div class = "poster-box-header">
@@ -72,11 +73,11 @@
 					</div>
 					<div class = "poster-input">
 					   	<label for = "poster-comments-input">Comments:</label>
-						<textarea id = "poster-comments-input"></textarea>	
+						<textarea id = "poster-comments-input"></textarea>
 					</div>
 					<div class = "poster-input">
 						<label for = "poster-contact-input">Contact Info:</label>
-						<input type = "text" id = "poster-contact-input">	
+						<input type = "text" id = "poster-contact-input">
 					</div>
 					<div class = "poster-input">
 						<label for = "poster-password-input">Protect your item with a password:</label>
@@ -86,7 +87,7 @@
 				<div class = "poster-box-footer">
 					<button type = "button" class = "poster-post-button">Post</button>
 					<button type = "button" class = "cancel-poster-button">Cancel</button>
-				</div>	   
+				</div>
 			</div>
 		</div>
 		<div class = "hidden-pass-screen">
@@ -96,7 +97,7 @@
 					<button type = "button" class = "close-pass-button">&times;</button>
 				</div>
 				<div class = "pass-box-body">
-				 	<div class = "pass-box-input">	
+				 	<div class = "pass-box-input">
 						<label for = "pass-box-pass">Enter password: </label>
 						<input type = "text" id = "pass-box-pass">
 					</div>

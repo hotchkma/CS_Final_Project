@@ -5,17 +5,14 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 
-//app.engine('handlebars', exphbs({ defaultLayout: 'null'}));
-//app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'));
-  /* res.status(200).render('tweeterPage', {
-    twitData: tData
-  });
-  */
+  //res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'));
+   res.status(200).render('home');
 });
 
 app.listen(port, function () {
