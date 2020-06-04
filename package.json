@@ -1,0 +1,29 @@
+{
+  "name": "master-assignment-5",
+  "version": "1.0.0",
+  "description": "Handlebars templating",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "handlebars ./views/partials/newTwit.handlebars -f public/newTwit.js",
+    "build1": "handlebars ./views/partials/modal.handlebars -f public/modal.js",
+    "prestart": "npm run build && npm run build1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hotchkma/CS_Final_Project.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-sp20/master-assignment-5/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-sp20/master-assignment-5#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "handlebars": "^4.7.6"
+  },
+  "devDependencies": {}
+}
