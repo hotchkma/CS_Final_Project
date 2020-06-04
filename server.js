@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
    res.status(200).render('home');
 });
 
+app.get('*', function (req, res) {
+  res.status(200).render('404');
+});
+
 app.listen(port, function () {
   console.log("== Server is listening on port", port);
 });
