@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
    res.status(200).render('home');
 });
 
+app.post('/:person', function( req, res, next) {
+
+});
+
 app.get('*', function (req, res) {
   res.status(200).render('404');
 });

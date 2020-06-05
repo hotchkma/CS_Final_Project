@@ -187,6 +187,16 @@ body {
 	width: 200px;
 }
 
+#four0{
+	position: absolute;
+	top: 38%;
+	left: 38%;
+	height: 500px;
+	width: 500px;
+	font-size: 100px;
+	color: #d73f09;
+}
+
 
 .hidden-pass-screen {
 	background-color: rgba(0,0,0,0.5);
