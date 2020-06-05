@@ -18,7 +18,120 @@ function closePosterView() {
 }
 
 function addPost(event) {
-   	//add the post with the user-specified contents
+	/*
+	<article class = "post">
+			   	<div class = "post-front">
+		   			<div class = "post-header">
+					   	<div class = "post-item">
+							An A
+						</div>
+						<button type = "button" class = "remove-post-button">Remove</button>
+					</div>
+
+					<div class = "img-container">
+						<img class = "img-item" src = "https://media.gettyimages.com/photos/letter-a-made-by-multi-colored-sparklers-at-night-picture-id914262264?s=612x612" alt = "a photo"/>
+					</div>
+				</div>
+				<div class = "post-back">
+				   	<div class = "post-back-header">
+						<button type = "button" class = "back-to-front">&times;</button>
+					</div>
+					<div class = post-text>
+					   	<label for = "post-comments">Comments: </label>
+						<div class = "post-comments">
+							It's an A.
+						</div>
+						<label for = "post-contact-info">Contact Info: </label>
+						<div class = "post-contact-info">
+							1-800-1230-123
+						</div>
+			     		</div>
+				</div>
+				<div class = post-pass>
+					password
+				</div>
+			</article>
+
+	*/
+
+	var thriftPost = document.createElement('article');
+	thriftPost.classList.add('post');
+
+	var postFront = document.createElement('div');
+	postFront.classList.add('post-front');
+	thriftPost.appendChild(postFront);
+
+	var postHeader = document.createElement('div');
+	postHeader.classList.add('post-header');
+	postFront.appendChild(postHeader);
+
+	//NEED TO FIX BUTTONS ONE AND TWO
+
+
+	var postItem = document.createElement('div');
+	postItem.classList.add('post-item');
+	//Add text here
+	postItem.textContent = 'placeholder';
+	postHeader.appendChild(postItem);
+
+	var button = document.createElement('button');
+	button.classList.add('remove-post-button');
+	button.textContent = "Remove";
+	postHeader.appendChild(button);
+
+	var imgContainer = document.createElement('div');
+	imgContainer.classList.add('img-container');
+	postFront.appendChild(imgContainer);
+
+
+	var imgItem = document.createElement('img');
+	imgItem.classList.add('img-item');
+	imgItem.src = "https://placekitten.com/200/300";
+	imgContainer.appendChild(imgItem);
+	
+	var postBack = document.createElement('div');
+	postBack.classList.add('post-back');
+	thriftPost.appendChild(postBack);
+
+	var postBackHeader = document.createElement('div');
+	postBackHeader.classList.add('post-back-header');
+	postBack.appendChild(postBackHeader);
+
+	var button2 = document.createElement('button');
+	button2.classList.add('back-to-front');
+	button2.textContent = "&times";
+	postBackHeader.appendChild(button2);
+	
+	var postText = document.createElement('div');
+	postText.classList.add('post-text');
+	postBack.appendChild(postText);
+
+	//ADD LABEL HERE
+	
+	var postComments = document.createElement('div');
+	postComments.classList.add('post-comments');
+	postComments.textContent = 'placeholder';
+	postText.appendChild(postComments);
+
+	var postContactInfo = document.createElement('div');
+	postContactInfo.classList.add('post-contact-info');
+	postContactInfo.textContent = '678-999-8212';
+	postText.appendChild(postContactInfo);
+
+	var postPass = document.createElement('div');
+	postPass.classList.add('post-pass');
+	postPass.textContent = 'placeholder password';
+	thriftPost.appendChild(postPass);
+	
+
+	
+
+
+	var postContainer = document.getElementsByClassName('post-container');
+	postContainer[0].appendChild(thriftPost);
+	
+
+
 	closePosterView();
 }
 
