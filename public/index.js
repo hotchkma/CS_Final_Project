@@ -18,6 +18,24 @@ function closePosterView() {
 }
 
 function addPost(event) {
+
+	//This currently requires a link to a hosted image. Will look into local file sourcing if possible. Will also have to change home.handlebars.
+	var itemPic = document.getElementById('poster-img-input');
+	var picToAdd = itemPic.value;
+
+
+
+	var itemHeader = document.getElementById('poster-item-input');
+	var headerToAdd = itemHeader.value;
+	console.log(headerToAdd);
+
+	var itemComment = document.getElementById('poster-comments-input');
+	var commentToAdd = itemComment.value;
+	console.log(commentToAdd);
+
+	var itemContactInfo = document.getElementById('poster-contact-input');
+	var contactToAdd = itemContactInfo.value;
+	console.log(contactToAdd);
 	/*
 	<article class = "post">
 			   	<div class = "post-front">
@@ -71,10 +89,11 @@ function addPost(event) {
 	var postItem = document.createElement('div');
 	postItem.classList.add('post-item');
 	//Add text here
-	postItem.textContent = 'placeholder';
+	postItem.textContent = headerToAdd;
 	postHeader.appendChild(postItem);
 
 	var button = document.createElement('button');
+	button.type = "button";
 	button.classList.add('remove-post-button');
 	button.textContent = "Remove";
 	postHeader.appendChild(button);
@@ -86,7 +105,7 @@ function addPost(event) {
 
 	var imgItem = document.createElement('img');
 	imgItem.classList.add('img-item');
-	imgItem.src = "https://placekitten.com/200/300";
+	imgItem.src = picToAdd;
 	imgContainer.appendChild(imgItem);
 	
 	var postBack = document.createElement('div');
@@ -98,24 +117,33 @@ function addPost(event) {
 	postBack.appendChild(postBackHeader);
 
 	var button2 = document.createElement('button');
+	button2.type = "button";
 	button2.classList.add('back-to-front');
-	button2.textContent = "&times";
+	button2.textContent = "&times;";
 	postBackHeader.appendChild(button2);
 	
 	var postText = document.createElement('div');
 	postText.classList.add('post-text');
 	postBack.appendChild(postText);
 
-	//ADD LABEL HERE
+	
+	var labelComments = document.createElement('label');
+	labelComments.htmlFor = 'post-comments';
+	postText.appendChild(labelComments);
 	
 	var postComments = document.createElement('div');
 	postComments.classList.add('post-comments');
-	postComments.textContent = 'placeholder';
+	postComments.textContent = commentToAdd;
 	postText.appendChild(postComments);
+
+	var labelContacts = document.createElement('label');
+	labelContacts.htmlFor = 'post-contact-info';
+	postText.appendChild(labelContacts);
+
 
 	var postContactInfo = document.createElement('div');
 	postContactInfo.classList.add('post-contact-info');
-	postContactInfo.textContent = '678-999-8212';
+	postContactInfo.textContent = contactToAdd;
 	postText.appendChild(postContactInfo);
 
 	var postPass = document.createElement('div');
@@ -131,6 +159,7 @@ function addPost(event) {
 	postContainer[0].appendChild(thriftPost);
 	
 
+	console.log(thriftPost);
 
 	closePosterView();
 }
