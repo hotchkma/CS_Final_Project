@@ -1,13 +1,13 @@
 {
-  "name": "master-assignment-5",
+  "name": "master-CS-final-project",
   "version": "1.0.0",
-  "description": "Handlebars templating",
+  "description": "OSUThrift",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "",
-    "prestart": ""
+    "build": "handlebars views/partials/post.handlebars -f views/layouts/post.js",
+    "prestart": "npm run build"
   },
   "repository": {
     "type": "git",

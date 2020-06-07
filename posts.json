@@ -1,0 +1,11 @@
+[
+	{
+		"item" : "An example",
+		"photo" : "",
+		"comments" : "These are words to comment on my item",
+		"contacts" : "This is where you put your desired contact information",
+		"password" : "secret password"
+
+	}
+
+]

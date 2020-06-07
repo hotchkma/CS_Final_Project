@@ -1,36 +1,7 @@
 <main class = "post-container">
-  <article class = "post">
-      <div class = "post-front">
-        <div class = "post-header">
-          <div class = "post-item">
-          An A
-        </div>
-        <button type = "button" class = "remove-post-button">Remove</button>
-      </div>
-
-      <div class = "img-container">
-        <img class = "img-item" src = "https://media.gettyimages.com/photos/letter-a-made-by-multi-colored-sparklers-at-night-picture-id914262264?s=612x612" alt = "a photo"/>
-      </div>
-    </div>
-    <div class = "post-back">
-        <div class = "post-back-header">
-        <button type = "button" class = "back-to-front">&times;</button>
-      </div>
-      <div class = post-text>
-          <label for = "post-comments">Comments: </label>
-        <div class = "post-comments">
-          It's an A.
-        </div>
-        <label for = "post-contact-info">Contact Info: </label>
-        <div class = "post-contact-info">
-          1-800-1230-123
-        </div>
-          </div>
-    </div>
-    <div class = post-pass>
-      password
-    </div>
-  </article>
+	{{#each posts}}
+		{{> post}}
+	{{/each}}
 </main>
 
 <button type = "button" id = "poster-button"><i class="fas fa-images"></i></button>
