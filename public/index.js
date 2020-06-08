@@ -192,3 +192,26 @@ close_poster_button[0].addEventListener('click', closePosterView);
 
 var post_poster_button = document.getElementsByClassName("poster-post-button");
 post_poster_button[0].addEventListener('click', addPost);
+
+var posts = document.getElementsByClassName('post-item');
+
+var searchButton = document.getElementById('search-button');
+
+function search(){
+	var searchQuery = document.getElementById('search-box').value;
+	var searchQuery2 = searchQuery.toLowerCase();
+
+	for (var i = posts.length - 1; i >= 0; i--){
+		var itemString = posts[i].textContent;
+		var itemString2 = itemString.toLowerCase();
+
+		if (itemString2.includes(searchQuery2) != 1){
+			var dad1 = posts[i].parentNode;
+			var dad2 = dad1.parentNode;
+			var dad3 = dad2.parentNode;
+			dad3.parentNode.removeChild(dad3);
+		}
+	}
+}
+
+searchButton.addEventListener('click', search);
