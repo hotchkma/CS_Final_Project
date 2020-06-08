@@ -19,149 +19,43 @@ function closePosterView() {
 
 function addPost(event) {
 
-	//This currently requires a link to a hosted image. Will look into local file sourcing if possible. Will also have to change home.handlebars.
+	//almost done...need to make sure this now syncs with the server and data is transferred to posts.json
+
 	var itemPic = document.getElementById('poster-img-input');
 	var picToAdd = itemPic.value;
 
-
+	var itemPass = document.getElementById('poster-password-input');
+	var passToAdd = itemPass.value;
 
 	var itemHeader = document.getElementById('poster-item-input');
 	var headerToAdd = itemHeader.value;
-	console.log(headerToAdd);
 
 	var itemComment = document.getElementById('poster-comments-input');
 	var commentToAdd = itemComment.value;
-	console.log(commentToAdd);
 
 	var itemContactInfo = document.getElementById('poster-contact-input');
 	var contactToAdd = itemContactInfo.value;
-	console.log(contactToAdd);
-	/*
-	<article class = "post">
-			   	<div class = "post-front">
-		   			<div class = "post-header">
-					   	<div class = "post-item">
-							An A
-						</div>
-						<button type = "button" class = "remove-post-button">Remove</button>
-					</div>
-
-					<div class = "img-container">
-						<img class = "img-item" src = "https://media.gettyimages.com/photos/letter-a-made-by-multi-colored-sparklers-at-night-picture-id914262264?s=612x612" alt = "a photo"/>
-					</div>
-				</div>
-				<div class = "post-back">
-				   	<div class = "post-back-header">
-						<button type = "button" class = "back-to-front">&times;</button>
-					</div>
-					<div class = post-text>
-					   	<label for = "post-comments">Comments: </label>
-						<div class = "post-comments">
-							It's an A.
-						</div>
-						<label for = "post-contact-info">Contact Info: </label>
-						<div class = "post-contact-info">
-							1-800-1230-123
-						</div>
-			     		</div>
-				</div>
-				<div class = post-pass>
-					password
-				</div>
-			</article>
-
-	*/
-
-	var thriftPost = document.createElement('article');
-	thriftPost.classList.add('post');
-
-	var postFront = document.createElement('div');
-	postFront.classList.add('post-front');
-	thriftPost.appendChild(postFront);
-
-	var postHeader = document.createElement('div');
-	postHeader.classList.add('post-header');
-	postFront.appendChild(postHeader);
-
-	//NEED TO FIX BUTTONS ONE AND TWO
-
-
-	var postItem = document.createElement('div');
-	postItem.classList.add('post-item');
-	//Add text here
-	postItem.textContent = headerToAdd;
-	postHeader.appendChild(postItem);
-
-	var button = document.createElement('button');
-	button.type = "button";
-	button.classList.add('remove-post-button');
-	button.textContent = "Remove";
-	postHeader.appendChild(button);
-
-	var imgContainer = document.createElement('div');
-	imgContainer.classList.add('img-container');
-	postFront.appendChild(imgContainer);
-
-
-	var imgItem = document.createElement('img');
-	imgItem.classList.add('img-item');
-	imgItem.src = picToAdd;
-	imgContainer.appendChild(imgItem);
 	
-	var postBack = document.createElement('div');
-	postBack.classList.add('post-back');
-	thriftPost.appendChild(postBack);
+	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "") {
+		alert("Please complete all fields to the post");
+	}
 
-	var postBackHeader = document.createElement('div');
-	postBackHeader.classList.add('post-back-header');
-	postBack.appendChild(postBackHeader);
-
-	var button2 = document.createElement('button');
-	button2.type = "button";
-	button2.classList.add('back-to-front');
-	button2.textContent = "&times;";
-	postBackHeader.appendChild(button2);
+	else {
+		var postContext = {
+			item: headerToAdd,
+			photo: picToAdd,
+			comments: commentToAdd,
+			contacts: contactToAdd,
+			password: passToAdd
+		};
 	
-	var postText = document.createElement('div');
-	postText.classList.add('post-text');
-	postBack.appendChild(postText);
-
+		var postHTML = Handlebars.templates.postBody(postContext);
 	
-	var labelComments = document.createElement('label');
-	labelComments.htmlFor = 'post-comments';
-	postText.appendChild(labelComments);
+		var postContainer = document.getElementsByClassName("post-container")[0];
+		postContainer.insertAdjacentHTML('beforeend', postHTML);
 	
-	var postComments = document.createElement('div');
-	postComments.classList.add('post-comments');
-	postComments.textContent = commentToAdd;
-	postText.appendChild(postComments);
-
-	var labelContacts = document.createElement('label');
-	labelContacts.htmlFor = 'post-contact-info';
-	postText.appendChild(labelContacts);
-
-
-	var postContactInfo = document.createElement('div');
-	postContactInfo.classList.add('post-contact-info');
-	postContactInfo.textContent = contactToAdd;
-	postText.appendChild(postContactInfo);
-
-	var postPass = document.createElement('div');
-	postPass.classList.add('post-pass');
-	postPass.textContent = 'placeholder password';
-	thriftPost.appendChild(postPass);
-	
-
-	
-
-
-	var postContainer = document.getElementsByClassName('post-container');
-	postContainer[0].appendChild(thriftPost);
-	
-
-	console.log(thriftPost);
-
-	closePosterView();
+		closePosterView();
+	}
 }
 
 var pass_num = -1;
