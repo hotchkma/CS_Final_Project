@@ -1,5 +1,21 @@
-//need to implement a search - exclude the password from the search terms
+//search works but isn't live search and doesn't return elements to the DOM
+function search() {
+	var posts = document.getElementsByClassName('post-item');
+	var searchQuery = document.getElementById('search-box').value;
+	var searchQuery2 = searchQuery.toLowerCase();
 
+	for (var i = posts.length - 1; i >= 0; i--){
+		var itemString = posts[i].textContent;
+		var itemString2 = itemString.toLowerCase();
+
+		if (itemString2.includes(searchQuery2) != 1){
+			var dad1 = posts[i].parentNode;
+			var dad2 = dad1.parentNode;
+			var dad3 = dad2.parentNode;
+			dad3.parentNode.removeChild(dad3);
+		}
+	}
+}
 
 function togglePosterView() {
 	var hidden_poster = document.getElementsByClassName("hidden-poster");
@@ -18,8 +34,6 @@ function closePosterView() {
 }
 
 function addPost(event) {
-
-	//almost done...need to make sure this now syncs with the server and data is transferred to posts.json
 
 	var itemPic = document.getElementById('poster-img-input');
 	var picToAdd = itemPic.value;
@@ -41,6 +55,10 @@ function addPost(event) {
 	}
 
 	else {
+		var request = new XMLHttpRequest();
+		var requestURL = '/post/';
+		request.open('POST', requestURL);
+
 		var postContext = {
 			item: headerToAdd,
 			photo: picToAdd,
@@ -48,7 +66,14 @@ function addPost(event) {
 			contacts: contactToAdd,
 			password: passToAdd
 		};
-	
+
+		var requestBody = JSON.stringify(postContext);
+		request.setRequestHeader (
+			'Content-Type', 'application/json'
+		);
+		
+		request.send(requestBody);
+
 		var postHTML = Handlebars.templates.postBody(postContext);
 	
 		var postContainer = document.getElementsByClassName("post-container")[0];
@@ -82,9 +107,10 @@ function closePassView() {
 }
 
 function removePass() {
+	var posts = document.getElementsByClassName('post-item');
 	if (checkPass()) {
 		console.log("remove the post @ index ", pass_num);
-		var dad1 = posts[pass_num].parentNode;
+	   	var dad1 = posts[pass_num].parentNode;
 		var dad2 = dad1.parentNode;
 		var dad3 = dad2.parentNode;
 		dad3.parentNode.removeChild(dad3);
@@ -196,25 +222,5 @@ close_poster_button[0].addEventListener('click', closePosterView);
 var post_poster_button = document.getElementsByClassName("poster-post-button");
 post_poster_button[0].addEventListener('click', addPost);
 
-var posts = document.getElementsByClassName('post-item');
-
 var searchButton = document.getElementById('search-button');
-
-function search(){
-	var searchQuery = document.getElementById('search-box').value;
-	var searchQuery2 = searchQuery.toLowerCase();
-
-	for (var i = posts.length - 1; i >= 0; i--){
-		var itemString = posts[i].textContent;
-		var itemString2 = itemString.toLowerCase();
-
-		if (itemString2.includes(searchQuery2) != 1){
-			var dad1 = posts[i].parentNode;
-			var dad2 = dad1.parentNode;
-			var dad3 = dad2.parentNode;
-			dad3.parentNode.removeChild(dad3);
-		}
-	}
-}
-
 searchButton.addEventListener('click', search);
