@@ -12,7 +12,7 @@ body {
 }
 
 .nav-bar {
-   	padding: 13px;
+   	padding: 15px;
 	background-color: black;
 }
 
@@ -84,9 +84,9 @@ body {
 }
 
 .search {
-	float: right;
-	position: relative;
-	bottom: 9.5px;
+	position: absolute;
+	top: 74px;
+	right: 4px;
 }
 
 #search-button:hover {
