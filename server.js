@@ -1,6 +1,8 @@
 var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
+var fs = require('fs');
+
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -8,6 +10,8 @@ var postData = require('./posts');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(express.json());
 
 app.use(express.static('public'));
 
@@ -19,8 +23,22 @@ app.get('/', function (req, res) {
    });
 });
 
-app.post('/:person', function( req, res, next) {
+app.post('/post', function( req, res, next) {
+	console.log(req.body);
+	postData.push({
+		item: req.body.item,
+		photo: req.body.photo,
+		comments: req.body.comments,
+		contacts: req.body.contacts,
+		password: req.body.password
+	});
+	
+	var content = JSON.stringify(postData);
+	fs.writeFile('./posts.json', content, (err)  => {
+		if (err) throw err;
+	});
 
+	res.status(200).send("Posted Successfully!");
 });
 
 app.get('*', function (req, res) {
