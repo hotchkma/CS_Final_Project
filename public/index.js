@@ -84,7 +84,10 @@ function closePassView() {
 function removePass() {
 	if (checkPass()) {
 		console.log("remove the post @ index ", pass_num);
-	   	//remove post @pass_num
+		var dad1 = posts[pass_num].parentNode;
+		var dad2 = dad1.parentNode;
+		var dad3 = dad2.parentNode;
+		dad3.parentNode.removeChild(dad3);
 		closePassView();
 	}
 	else {
