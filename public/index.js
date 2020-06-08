@@ -53,9 +53,19 @@ function addPost(event) {
 	
 		var postContainer = document.getElementsByClassName("post-container")[0];
 		postContainer.insertAdjacentHTML('beforeend', postHTML);
-	
+		
 		closePosterView();
+		updateButtons();
 	}
+}
+
+function updateButtons() {
+	var images = document.getElementsByClassName("img-item");
+	images[images.length-1].addEventListener('click', itemInfoRequest);
+	var back_to_front = document.getElementsByClassName("back-to-front");
+	back_to_front[back_to_front.length-1].addEventListener('click', closeInfoRequest);
+	var buttons = document.getElementsByClassName("remove-post-button");
+	buttons[buttons.length-1].addEventListener('click', removePostRequest);
 }
 
 var pass_num = -1;
@@ -111,34 +121,50 @@ function toggleFrontView() {
 	
 }
 
+function itemInfoRequest(event) {
+	var val = 0;
+	for (var j = 0; j < images.length; j++) {
+		var image = images[j];
+		if(this.isSameNode(image)) {
+			val = j;
+		}
+	}
+	image_num = val;
+	toggleBackView();
+}
+
+function closeInfoRequest(event) {
+	var val = 0;
+	for (var j = 0; j < back_to_front.length; j++) {
+		var button = back_to_front[j];
+		if(this.isSameNode(button)) {
+			val = j;
+		}
+	}
+	post_num = val;
+	toggleFrontView();
+}
+
+function removePostRequest(event) {
+   	var val = 0;
+	for (var j = 0; j < buttons.length; j++) {
+		var button = buttons[j];
+		if (this.isSameNode(button)) {
+			val = j;
+		}
+	}	
+	pass_num = val;
+   	togglePassView();
+}
+
 var images = document.getElementsByClassName("img-item");
 for (var i = 0; i < images.length; i++) {
-	images[i].addEventListener('click', function(event) {
-		var val = 0;
-		for (var j = 0; j < images.length; j++) {
-			var image = images[j];
-			if(this.isSameNode(image)) {
-				val = j;
-			}
-		}
-		image_num = val;
-		toggleBackView();
-	})
+	images[i].addEventListener('click', itemInfoRequest);
 }
 
 var back_to_front = document.getElementsByClassName("back-to-front");
 for (var i = 0; i < images.length; i++) {
-	back_to_front[i].addEventListener('click', function(event) {
-		var val = 0;
-		for (var j = 0; j < back_to_front.length; j++) {
-			var button = back_to_front[j];
-			if(this.isSameNode(button)) {
-				val = j;
-			}
-		}
-		post_num = val;
-		toggleFrontView();
-	})
+	back_to_front[i].addEventListener('click', closeInfoRequest);
 }
 
 var close_pass_button = document.getElementsByClassName("close-pass-button");
@@ -152,17 +178,7 @@ remove_pass_button[0].addEventListener('click', removePass);
 
 var buttons = document.getElementsByClassName("remove-post-button");
 for (var i = 0; i < buttons.length; i++) {
-	buttons[i].addEventListener('click', function(event) {
-	   	var val = 0;
-		for (var j = 0; j < buttons.length; j++) {
-			var button = buttons[j];
-			if (this.isSameNode(button)) {
-				val = j;
-			}
-		}	
-		pass_num = val;
-	   	togglePassView();
-	})
+	buttons[i].addEventListener('click', removePostRequest);
 }
 
 var poster_button = document.getElementById("poster-button");
