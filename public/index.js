@@ -5,12 +5,12 @@ function search() {
 	var searchQuery2 = searchQuery.toLowerCase();
 
 	var comments = document.getElementsByClassName('post-comments');
-	
+
 
 	for (var i = posts.length - 1; i >= 0; i--){
 		var itemString = posts[i].textContent;
 		var itemString2 = itemString.toLowerCase();
-		
+
 		var itemString3 = comments[i].textContent;
 		var itemString4 = itemString3.toLowerCase();
 
@@ -196,9 +196,6 @@ function removePostRequest(event) {
    	togglePassView();
 }
 
-function goHome(){
-	window.history.back();
-}
 
 var images = document.getElementsByClassName("img-item");
 for (var i = 0; i < images.length; i++) {
@@ -238,6 +235,3 @@ post_poster_button[0].addEventListener('click', addPost);
 
 var searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', search);
-
-//var homeButton = document.getElementById('home-button');
-//homeButton.addEventListener('click', goHome);

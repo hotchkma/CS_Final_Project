@@ -196,6 +196,23 @@ body {
 	font-size: 100px;
 	color: #d73f09;
 }
+#home{
+	position: absolute;
+	text-align: center;
+	top: 70%;
+	left: 44%;
+	height: 50px;
+	width: 200px;
+	font-size: 30px;
+	color: black;
+	border-style: solid;
+	background-color: #d73f09;
+	border-radius: 10%
+}
+#home:hover{
+	color: #d73f09;
+	background-color: black;
+}
 
 
 .hidden-pass-screen {
