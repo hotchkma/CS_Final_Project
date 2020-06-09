@@ -4,16 +4,23 @@ function search() {
 	var searchQuery = document.getElementById('search-box').value;
 	var searchQuery2 = searchQuery.toLowerCase();
 
+	var comments = document.getElementsByClassName('post-comments');
+	
+
 	for (var i = posts.length - 1; i >= 0; i--){
 		var itemString = posts[i].textContent;
 		var itemString2 = itemString.toLowerCase();
+		
+		var itemString3 = comments[i].textContent;
+		var itemString4 = itemString3.toLowerCase();
 
-		if (itemString2.includes(searchQuery2) != 1){
+		if (itemString2.includes(searchQuery2) != 1 && itemString4.includes(searchQuery2) != 1){
 			var dad1 = posts[i].parentNode;
 			var dad2 = dad1.parentNode;
 			var dad3 = dad2.parentNode;
 			dad3.parentNode.removeChild(dad3);
 		}
+
 	}
 }
 
@@ -115,6 +122,9 @@ function removePass() {
 		var dad3 = dad2.parentNode;
 		dad3.parentNode.removeChild(dad3);
 		closePassView();
+
+		//JSON DELETION PROTOTYPE
+
 	}
 	else {
 	   	alert("Incorrect password entered.");
