@@ -49,7 +49,7 @@ function addPost(event) {
 
 	var itemContactInfo = document.getElementById('poster-contact-input');
 	var contactToAdd = itemContactInfo.value;
-	
+
 	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "") {
 		alert("Please complete all fields to the post");
 	}
@@ -71,14 +71,14 @@ function addPost(event) {
 		request.setRequestHeader (
 			'Content-Type', 'application/json'
 		);
-		
+
 		request.send(requestBody);
 
 		var postHTML = Handlebars.templates.postBody(postContext);
-	
+
 		var postContainer = document.getElementsByClassName("post-container")[0];
 		postContainer.insertAdjacentHTML('beforeend', postHTML);
-		
+
 		closePosterView();
 		updateButtons();
 	}
@@ -130,7 +130,7 @@ function checkPass() {
 	if (pass_input == pass)
    		return true;
 	else
-   		return false;	   
+   		return false;
 }
 
 var image_num = -1;
@@ -147,7 +147,7 @@ function toggleFrontView() {
    	console.log("post_num: ", post_num);
 	document.getElementsByClassName("post-front")[post_num].style.display = 'block';
 	document.getElementsByClassName("post-back")[post_num].style.display = 'none';
-	
+
 }
 
 function itemInfoRequest(event) {
@@ -181,9 +181,13 @@ function removePostRequest(event) {
 		if (this.isSameNode(button)) {
 			val = j;
 		}
-	}	
+	}
 	pass_num = val;
    	togglePassView();
+}
+
+function goHome(){
+	window.history.back();
 }
 
 var images = document.getElementsByClassName("img-item");
@@ -224,3 +228,6 @@ post_poster_button[0].addEventListener('click', addPost);
 
 var searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', search);
+
+//var homeButton = document.getElementById('home-button');
+//homeButton.addEventListener('click', goHome);
