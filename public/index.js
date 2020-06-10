@@ -82,7 +82,7 @@ function addPost(event) {
 	var itemPrice = document.getElementById('poster-price-input');
 	var priceToAdd = itemPrice.value;
 
-	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
+	if (picToAdd == "" || passToAdd == "" || headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
 		alert("Please complete all fields to the post");
 	}
 
