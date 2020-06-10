@@ -58,6 +58,7 @@ function closePosterView() {
 	document.getElementById("poster-item-input").value = "";
 	document.getElementById("poster-img-input").value = "";
 	document.getElementById("poster-contact-input").value = "";
+	document.getElementById("poster-price-input").value = "";
    	hidden_poster[0].style.display = 'none';
 }
 
@@ -78,7 +79,10 @@ function addPost(event) {
 	var itemContactInfo = document.getElementById('poster-contact-input');
 	var contactToAdd = itemContactInfo.value;
 
-	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "") {
+	var itemPrice = document.getElementById('poster-price-input');
+	var priceToAdd = itemPrice.value;
+
+	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
 		alert("Please complete all fields to the post");
 	}
 
@@ -90,6 +94,7 @@ function addPost(event) {
 		var postContext = {
 			item: headerToAdd,
 			photo: picToAdd,
+			price: priceToAdd,
 			comments: commentToAdd,
 			contacts: contactToAdd,
 			password: passToAdd
