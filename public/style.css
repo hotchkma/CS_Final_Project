@@ -3,7 +3,7 @@ body {
 }
 
 .site-title {
-	background-color: #d73f09;
+	background-color: #FF4500;
 	margin: 0;
 	padding: 15px;
 	color: white;
@@ -25,17 +25,21 @@ body {
 
 .post {
    	width: 260px;
-	background-color: #d73f09;
+	background-color: #FF4500;
 	color: #ffffff;
 	padding: 5px 5px 10px 5px;
 	margin: 5px;
 	border: 5px solid black;
+	border-radius: 15px;
+	font-family: Helvetica;
 }
 
 .post-header {
 	justify-content: space-between;
    	margin: 0px 0px 5px 0px;
 	display: flex;
+	font-weight:700;
+	font-family: Helvetica;
 }
 
 .post-item {
@@ -46,8 +50,9 @@ body {
 }
 
 .remove-post-button {
-	background-color: #d73f09;
+	background-color: #FF4500;
 	color: #ffffff;
+	border-radius: 10px;
 }
 
 .remove-post-button:focus {
@@ -90,7 +95,7 @@ body {
 }
 
 #search-button:hover {
-	color: #d73f09;
+	color: #FF4500;
 }
 
 #poster-button {
@@ -107,7 +112,7 @@ body {
 }
 
 #poster-button:hover {
-	background-color: #d73f09;
+	background-color: #FF4500;
 	height: 70px;
 	font-size: 30px;
 	width: 70px;
@@ -132,7 +137,7 @@ body {
 	position: fixed;
 	top: 200px;
 	padding: 5px 5px 5px 10px;
-	background-color: #d73f09;
+	background-color: #FF4500;
 	border: 5px solid black;
 	width: 431px;
 	color: #ffffff;
@@ -194,7 +199,7 @@ body {
 	height: 500px;
 	width: 500px;
 	font-size: 100px;
-	color: #d73f09;
+	color: #FF4500;
 }
 #home{
 	position: absolute;
@@ -206,11 +211,11 @@ body {
 	font-size: 30px;
 	color: black;
 	border-style: solid;
-	background-color: #d73f09;
+	background-color: #FF4500;
 	border-radius: 10%
 }
 #home:hover{
-	color: #d73f09;
+	color: #FF4500;
 	background-color: black;
 }
 
@@ -230,7 +235,7 @@ body {
 	position: fixed;
 	top: 200px;
 	padding: 5px 5px 5px 10px;
-	background-color: #d73f09;
+	background-color: #FF4500;
 	border: 5px solid black;
 	color: #ffffff;
 }
