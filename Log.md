@@ -7,4 +7,7 @@
 - created 404 handlebars template, unfinished
 
 * 06/05/20 Ryan
-- updated 404
+- updated 404, complete added button functionality
+
+* 06/09/20 Ryan
+- added live search and contact search
