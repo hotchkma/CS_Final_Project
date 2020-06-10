@@ -5,6 +5,7 @@ function search() {
 	var searchQuery2 = searchQuery.toLowerCase();
 
 	var comments = document.getElementsByClassName('post-comments');
+	var contacts = document.getElementsByClassName('post-contact-info');
 
 
 	for (var i = posts.length - 1; i >= 0; i--){
@@ -14,7 +15,10 @@ function search() {
 		var itemString3 = comments[i].textContent;
 		var itemString4 = itemString3.toLowerCase();
 
-		if (itemString2.includes(searchQuery2) != 1 && itemString4.includes(searchQuery2) != 1){
+		var itemString5 = contacts[i].textContent;
+		var itemString6 = itemString5.toLowerCase();
+
+		if (itemString2.includes(searchQuery2) != 1 && itemString4.includes(searchQuery2) != 1 && itemString6.includes(searchQuery2) != 1){
 			var dad1 = posts[i].parentNode;
 			var dad2 = dad1.parentNode;
 			var dad3 = dad2.parentNode;
@@ -113,7 +117,7 @@ function closePassView() {
 	hidden_pass[0].style.display = 'none';
 }
 
-var fs = require('fs');
+//var fs = require('fs');
 
 function removePass() {
 	var posts = document.getElementsByClassName('post-item');
@@ -127,7 +131,7 @@ function removePass() {
 
 		//JSON DELETION PROTOTYPE
 
-	/* DOES NOT WORK SINCE IT IS CLIENT SIDE FOR REQUIRE()
+	/* DOES NOT WORK SINCE IT NEEDS SERVER SIDE FOR REQUIRE()
 		var postsJSON = fs.readFileSync('./posts.json', 'utf8');
 		var posts = JSON.parse(postsJSON);
 		delete posts[pass_num];
@@ -244,3 +248,6 @@ post_poster_button[0].addEventListener('click', addPost);
 
 var searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', search);
+
+var searchBar = document.getElementById('search-box');
+searchBar.addEventListener('input', search);

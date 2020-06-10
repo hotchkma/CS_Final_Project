@@ -24,6 +24,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/post', function( req, res, next) {
+  console.log("--------")
 	console.log(req.body);
 	postData.push({
 		item: req.body.item,
@@ -32,11 +33,22 @@ app.post('/post', function( req, res, next) {
 		contacts: req.body.contacts,
 		password: req.body.password
 	});
-	
+
 	var content = JSON.stringify(postData);
 	fs.writeFile('./posts.json', content, (err)  => {
 		if (err) throw err;
 	});
+
+/*
+  var postsJSON = fs.readFileSync('./posts.json', 'utf8');
+  var posts = JSON.parse(postsJSON);
+  console.log("--Del--")
+  console.log(posts[6]);
+  delete posts[6];
+  fs.writeFile('./posts.json', JSON.stringify(posts), (err)  => {
+		if (err) throw err;
+	});
+  */
 
 	res.status(200).send("Posted Successfully!");
 });
