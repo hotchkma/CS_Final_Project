@@ -59,8 +59,7 @@ function closePosterView() {
 	document.getElementById("poster-img-input").value = "";
 	document.getElementById("poster-contact-input").value = "";
 	document.getElementById("poster-price-input").value = "";
-   		postback[i].addEventListener('click', closeInfoRequest);
-hidden_poster[0].style.display = 'none';
+	hidden_poster[0].style.display = 'none';
 }
 
 function addPost(event) {
