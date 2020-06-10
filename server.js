@@ -35,7 +35,7 @@ app.post('/post', function( req, res, next) {
 		password: req.body.password
 	});
 
-	var content = JSON.stringify(postData);
+	var content = JSON.stringify(postData, null, "\t");
 	fs.writeFile('./posts.json', content, (err)  => {
 		if (err) throw err;
 	});
