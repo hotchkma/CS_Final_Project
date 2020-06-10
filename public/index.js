@@ -26,6 +26,15 @@ function search() {
 		}
 
 	}
+	if(searchQuery==""){
+		//return everything to DOM if search is empty
+
+		/*
+			Create Two node lists, one empty other full from DOM nodes
+			if deleted from list 1, move the node to list 2
+			if node from list2 meets criteria, move node from list 2 to list 1
+		*/
+	}
 }
 
 
