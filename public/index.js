@@ -28,6 +28,14 @@ function search() {
 	}
 }
 
+
+var siteTitle = document.getElementsByClassName("site-title");
+  siteTitle[0].addEventListener('click',function(){
+         window.location = 'http://localhost:3000/';
+  });
+
+
+
 function togglePosterView() {
 	var hidden_poster = document.getElementsByClassName("hidden-poster");
 	hidden_poster[0].style.display = 'flex';
