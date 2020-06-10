@@ -113,6 +113,8 @@ function closePassView() {
 	hidden_pass[0].style.display = 'none';
 }
 
+var fs = require('fs');
+
 function removePass() {
 	var posts = document.getElementsByClassName('post-item');
 	if (checkPass()) {
@@ -124,6 +126,13 @@ function removePass() {
 		closePassView();
 
 		//JSON DELETION PROTOTYPE
+
+	/* DOES NOT WORK SINCE IT IS CLIENT SIDE FOR REQUIRE()
+		var postsJSON = fs.readFileSync('./posts.json', 'utf8');
+		var posts = JSON.parse(postsJSON);
+		delete posts[pass_num];
+		fs.writeFileSync('./posts.json', JSON.stringify(posts));
+		*/
 
 	}
 	else {
