@@ -14,3 +14,4 @@
 
 * 06/09/20 Ryan
 - added total removal from JSON
+- added nodes back to dom
