@@ -1,6 +1,10 @@
 //search works but isn't live search and doesn't return elements to the DOM
+
+
 function search() {
 	var posts = document.getElementsByClassName('post-item');
+	console.log("--Posts--");
+	console.log(posts);
 	var searchQuery = document.getElementById('search-box').value;
 	var searchQuery2 = searchQuery.toLowerCase();
 
@@ -19,22 +23,18 @@ function search() {
 		var itemString6 = itemString5.toLowerCase();
 
 		if (itemString2.includes(searchQuery2) != 1 && itemString4.includes(searchQuery2) != 1 && itemString6.includes(searchQuery2) != 1){
+
 			var dad1 = posts[i].parentNode;
 			var dad2 = dad1.parentNode;
 			var dad3 = dad2.parentNode;
 			dad3.parentNode.removeChild(dad3);
-		}
 
+
+		}
 	}
 	if(searchQuery==""){
-		//return everything to DOM if search is empty
-
-		/*
-			Create Two node lists, one empty other full from DOM nodes
-			if deleted from list 1, move the node to list 2
-			if node from list2 meets criteria, move node from list 2 to list 1
-		*/
-	}
+		console.log("Returned!")
+		location.reload();
 }
 
 
@@ -120,21 +120,21 @@ function addPost(event) {
 function updateButtons() {
 	var images = document.getElementsByClassName("post-front");
 	images[images.length-1].addEventListener('click', itemInfoRequest);
-	
-	
+
+
 	var back_to_front = document.getElementsByClassName("post");
 	back_to_front[back_to_front.length-1].addEventListener('click', closeInfoRequest);
-	
 
-	
+
+
 	var back_to_front_button = document.getElementsByClassName("back-to-front");
         back_to_front_button[back_to_front_button.length-1].addEventListener('click', closeInfoRequest);
 
 
 	var buttons = document.getElementsByClassName("remove-post-button");
 	buttons[buttons.length-1].addEventListener('click', removePostRequest);
-	
-	
+
+
 }
 
 var pass_num = -1;

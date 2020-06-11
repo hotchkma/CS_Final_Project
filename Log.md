@@ -11,3 +11,6 @@
 
 * 06/09/20 Ryan
 - added live search and contact search
+
+* 06/09/20 Ryan
+- added total removal from JSON
