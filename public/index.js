@@ -33,8 +33,9 @@ function search() {
 		}
 	}
 	if(searchQuery==""){
-		console.log("Returned!")
+		console.log("Returned!");
 		location.reload();
+	}
 }
 
 
