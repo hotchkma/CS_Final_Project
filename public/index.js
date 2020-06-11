@@ -134,7 +134,23 @@ function closePassView() {
 	hidden_pass[0].style.display = 'none';
 }
 
-//var fs = require('fs');
+function removeReq(pass_num){
+	console.log("Index num: ", pass_num);
+	var request = new XMLHttpRequest();
+	var requestURL = '/delete';
+	request.open('POST', '/delete');
+	var pass = {
+		num: pass_num
+	}
+	var requestBody=JSON.stringify(pass);
+	console.log("req body", requestBody);
+	request.setRequestHeader(
+		'Content-Type', 'application/json'
+	);
+
+	request.send(requestBody);
+	updateButtons();
+}
 
 function removePass() {
 	var posts = document.getElementsByClassName('post-item');
@@ -146,20 +162,14 @@ function removePass() {
 		dad3.parentNode.removeChild(dad3);
 		closePassView();
 
-		//JSON DELETION PROTOTYPE
-
-	/* DOES NOT WORK SINCE IT NEEDS SERVER SIDE FOR REQUIRE()
-		var postsJSON = fs.readFileSync('./posts.json', 'utf8');
-		var posts = JSON.parse(postsJSON);
-		delete posts[pass_num];
-		fs.writeFileSync('./posts.json', JSON.stringify(posts));
-		*/
+		removeReq(pass_num);
 
 	}
 	else {
 	   	alert("Incorrect password entered.");
 	}
 }
+
 
 function checkPass() {
 	var post_passes = document.getElementsByClassName("post-pass");

@@ -13,6 +13,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 
+
 app.use(express.static('public'));
 
 
@@ -39,18 +40,23 @@ app.post('/post', function( req, res, next) {
 		if (err) throw err;
 	});
 
-/*
-  var postsJSON = fs.readFileSync('./posts.json', 'utf8');
-  var posts = JSON.parse(postsJSON);
-  console.log("--Del--")
-  console.log(posts[6]);
-  delete posts[6];
-  fs.writeFile('./posts.json', JSON.stringify(posts), (err)  => {
+	res.status(200).send("Posted Successfully!");
+});
+
+app.post('/delete', function(req, res, next){
+  console.log(req.body.num);
+  var num = parseInt(req.body.num,10);
+  console.log(num);
+  console.log("-=-Before-=-");
+  console.log(postData);
+  console.log("-=-After-=-");
+  postData.splice(num,1);
+  console.log(postData);
+
+  var content = JSON.stringify(postData);
+	fs.writeFile('./posts.json', content, (err)  => {
 		if (err) throw err;
 	});
-  */
-
-	res.status(200).send("Posted Successfully!");
 });
 
 app.get('*', function (req, res) {
