@@ -30,12 +30,13 @@ app.post('/post', function( req, res, next) {
 	postData.push({
 		item: req.body.item,
 		photo: req.body.photo,
+		price: req.body.price,
 		comments: req.body.comments,
 		contacts: req.body.contacts,
 		password: req.body.password
 	});
 
-	var content = JSON.stringify(postData);
+	var content = JSON.stringify(postData, null, "\t");
 	fs.writeFile('./posts.json', content, (err)  => {
 		if (err) throw err;
 	});

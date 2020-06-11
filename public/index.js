@@ -58,7 +58,8 @@ function closePosterView() {
 	document.getElementById("poster-item-input").value = "";
 	document.getElementById("poster-img-input").value = "";
 	document.getElementById("poster-contact-input").value = "";
-   	hidden_poster[0].style.display = 'none';
+	document.getElementById("poster-price-input").value = "";
+	hidden_poster[0].style.display = 'none';
 }
 
 function addPost(event) {
@@ -78,7 +79,10 @@ function addPost(event) {
 	var itemContactInfo = document.getElementById('poster-contact-input');
 	var contactToAdd = itemContactInfo.value;
 
-	if (picToAdd == "" || passToAdd == "" | headerToAdd == "" || commentToAdd == "" || contactToAdd == "") {
+	var itemPrice = document.getElementById('poster-price-input');
+	var priceToAdd = itemPrice.value;
+
+	if (picToAdd == "" || passToAdd == "" || headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
 		alert("Please complete all fields to the post");
 	}
 
@@ -90,6 +94,7 @@ function addPost(event) {
 		var postContext = {
 			item: headerToAdd,
 			photo: picToAdd,
+			price: priceToAdd,
 			comments: commentToAdd,
 			contacts: contactToAdd,
 			password: passToAdd
@@ -113,12 +118,23 @@ function addPost(event) {
 }
 
 function updateButtons() {
-	var images = document.getElementsByClassName("img-item");
+	var images = document.getElementsByClassName("post-front");
 	images[images.length-1].addEventListener('click', itemInfoRequest);
-	var back_to_front = document.getElementsByClassName("back-to-front");
+	
+	
+	var back_to_front = document.getElementsByClassName("post");
 	back_to_front[back_to_front.length-1].addEventListener('click', closeInfoRequest);
+	
+
+	
+	var back_to_front_button = document.getElementsByClassName("back-to-front");
+        back_to_front_button[back_to_front_button.length-1].addEventListener('click', closeInfoRequest);
+
+
 	var buttons = document.getElementsByClassName("remove-post-button");
 	buttons[buttons.length-1].addEventListener('click', removePostRequest);
+	
+	
 }
 
 var pass_num = -1;
@@ -210,18 +226,27 @@ function itemInfoRequest(event) {
 	}
 	image_num = val;
 	toggleBackView();
+	event.stopPropagation();
+
 }
 
 function closeInfoRequest(event) {
 	var val = 0;
-	for (var j = 0; j < back_to_front.length; j++) {
-		var button = back_to_front[j];
+	for (var j = 0; j < back_to_front_button.length; j++) {
+		var button = back_to_front_button[j];
 		if(this.isSameNode(button)) {
 			val = j;
 		}
 	}
+	for ( var i = 0; i < back_to_front.length; i++){
+		var button2 = back_to_front[i];
+		if (this.isSameNode(button2)){
+			val = i;
+		}
+	}
 	post_num = val;
 	toggleFrontView();
+	event.stopPropagation();
 }
 
 function removePostRequest(event) {
@@ -234,18 +259,31 @@ function removePostRequest(event) {
 	}
 	pass_num = val;
    	togglePassView();
+	event.stopPropagation();
 }
 
 
-var images = document.getElementsByClassName("img-item");
+var images = document.getElementsByClassName("post-front");
 for (var i = 0; i < images.length; i++) {
 	images[i].addEventListener('click', itemInfoRequest);
 }
 
-var back_to_front = document.getElementsByClassName("back-to-front");
+
+var back_to_front = document.getElementsByClassName("post");
 for (var i = 0; i < images.length; i++) {
 	back_to_front[i].addEventListener('click', closeInfoRequest);
 }
+
+
+
+var back_to_front_button = document.getElementsByClassName("back-to-front");
+for (var i = 0; i < images.length; i++) {
+        back_to_front_button[i].addEventListener('click', closeInfoRequest);
+}
+
+
+
+
 
 var close_pass_button = document.getElementsByClassName("close-pass-button");
 close_pass_button[0].addEventListener('click', closePassView);
