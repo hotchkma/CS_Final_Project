@@ -94,6 +94,24 @@ body {
 	right: 4px;
 }
 
+
+#search-box {
+    background-color: #f7f2f2;
+}
+
+#search-box:focus {
+    background-color: white;
+}
+
+#search-button{
+	background-color: #f7f2f2;
+}
+
+#search-button:focus{
+	background-color: white;
+}
+
+
 #search-button:hover {
 	color: #FF4500;
 }
