@@ -1,5 +1,6 @@
 [
 	{
+<<<<<<< HEAD
 		"item": "Fortnite Tshirt <3",
 		"photo": "https://i.imgur.com/kuN608p.jpg",
 		"price": "1000",
@@ -39,4 +40,29 @@
     "contacts": "5036423231",
     "password": "password2"
   }
+=======
+		"item": "Dumbbells",
+		"photo": "https://i.imgur.com/XE9qOdK.jpg",
+		"price": "20",
+		"comments": "Selling a pair of 20 pound dumbbells. Convenient while the gyms are still closed!",
+		"contacts": "6789998212",
+		"password": "password1"
+	},
+	{
+		"item": "Vizio TV",
+		"photo": "https://i.imgur.com/eoHPQLKl.jpg",
+		"price": "75",
+		"comments": "A 32 inch Vizio TV. No scratches or dead pixels. Resolution is 1080p.",
+		"contacts": "1800fakenumber",
+		"password": "secret password"
+	},
+	{
+		"item": "Basketball",
+		"photo": "https://i.imgur.com/i9SodxO.jpg",
+		"price": "15",
+		"comments": "It's a basketball. Men's regulation size 29.5. Only used indoors, great condition!",
+		"contacts": "5036423231",
+		"password": "password2"
+	}
+>>>>>>> 698be25e29b852bcb05d1367669199e0cdfa9503
 ]
