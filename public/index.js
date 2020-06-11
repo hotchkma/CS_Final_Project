@@ -83,9 +83,14 @@ function addPost(event) {
 	var itemPrice = document.getElementById('poster-price-input');
 	var priceToAdd = itemPrice.value;
 
-	if (picToAdd == "" || passToAdd == "" || headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
+	if (isNaN(priceToAdd)){
+                alert("Please enter a number for the price of the item");
+        }	
+
+	else if (picToAdd == "" || passToAdd == "" || headerToAdd == "" || commentToAdd == "" || contactToAdd == "" || priceToAdd == "") {
 		alert("Please complete all fields to the post");
-	}
+	}	
+
 
 	else {
 		var request = new XMLHttpRequest();
